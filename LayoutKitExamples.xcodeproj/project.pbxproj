@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A252C9621E38F4280046838A /* TopDividerStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C9611E38F4280046838A /* TopDividerStackLayout.swift */; };
 		A27966091E37B351000AD16E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27966081E37B351000AD16E /* AppDelegate.swift */; };
 		A279660B1E37B351000AD16E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279660A1E37B351000AD16E /* ViewController.swift */; };
 		A279660E1E37B351000AD16E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279660C1E37B351000AD16E /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A252C9611E38F4280046838A /* TopDividerStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopDividerStackLayout.swift; sourceTree = "<group>"; };
 		A27966051E37B351000AD16E /* LayoutKitExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutKitExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27966081E37B351000AD16E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A279660A1E37B351000AD16E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A252C9601E38F4070046838A /* ExampleLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				A252C9611E38F4280046838A /* TopDividerStackLayout.swift */,
+			);
+			path = ExampleLayouts;
+			sourceTree = "<group>";
+		};
 		A27965FC1E37B351000AD16E = {
 			isa = PBXGroup;
 			children = (
@@ -161,9 +171,10 @@
 		A27966071E37B351000AD16E /* LayoutKitExamples */ = {
 			isa = PBXGroup;
 			children = (
-				A27966801E37B3B2000AD16E /* LayoutKit */,
 				A27966081E37B351000AD16E /* AppDelegate.swift */,
 				A279660A1E37B351000AD16E /* ViewController.swift */,
+				A252C9601E38F4070046838A /* ExampleLayouts */,
+				A27966801E37B3B2000AD16E /* LayoutKit */,
 				A279660C1E37B351000AD16E /* Main.storyboard */,
 				A279660F1E37B351000AD16E /* Assets.xcassets */,
 				A27966111E37B351000AD16E /* LaunchScreen.storyboard */,
@@ -398,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A252C9621E38F4280046838A /* TopDividerStackLayout.swift in Sources */,
 				A27966C31E37B3B2000AD16E /* ReloadableViewUpdateManager.swift in Sources */,
 				A27966B41E37B3B2000AD16E /* SizeLayout.swift in Sources */,
 				A279660B1E37B351000AD16E /* ViewController.swift in Sources */,
@@ -680,6 +692,7 @@
 				A279662F1E37B351000AD16E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A27966301E37B351000AD16E /* Build configuration list for PBXNativeTarget "LayoutKitExamplesTests" */ = {
 			isa = XCConfigurationList;
@@ -688,6 +701,7 @@
 				A27966321E37B351000AD16E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A27966331E37B351000AD16E /* Build configuration list for PBXNativeTarget "LayoutKitExamplesUITests" */ = {
 			isa = XCConfigurationList;
@@ -696,6 +710,7 @@
 				A27966351E37B351000AD16E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
