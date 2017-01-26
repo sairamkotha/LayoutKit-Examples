@@ -1,4 +1,4 @@
-# LayoutKit
+# LayoutKit-Examples
 Linkedin Layoutkit swift 3 examples.
 
 Linkedin Layoutkit - https://github.com/linkedin/LayoutKit
