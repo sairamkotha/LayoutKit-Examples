@@ -8,14 +8,12 @@
 
 import UIKit
 
-class PopOverCustomLayout: StackLayout<SwPopoverView> {
-    
-    init() {
-        
-        let labelLayout = LabelLayout<UILabel>(text: "Earth, otherwise known as the world, is the third planet from the Sun and the only object in the Universe known to harbor life", font: UIFont.systemFont(ofSize: 12), numberOfLines: 0, alignment: Alignment.center, flexibility: Flexibility.inflexible, viewReuseId: "daskda", config: nil)
-                
+open class PopOverCustomLayout: StackLayout<SwPopoverView> {
+    init(text: String) {
+        let labelLayout = LabelLayout<UILabel>(text: text, font: UIFont.systemFont(ofSize: 12), numberOfLines: 0, alignment: Alignment.center, flexibility: Flexibility.inflexible, viewReuseId: "labelLayout", config: nil)
+
         let insetPopoverLayout = InsetLayout(insets: EdgeInsets(top: 20, left: 10, bottom: 10, right: 8), sublayout: labelLayout)
-        
+
         super.init(
             axis: .horizontal,
             spacing: 0,
@@ -24,12 +22,11 @@ class PopOverCustomLayout: StackLayout<SwPopoverView> {
             flexibility: .inflexible,
             viewReuseId: nil,
             sublayouts: [insetPopoverLayout],
-            config: { (view) in
+            config: { view in
                 view.backgroundColor = .white
-        }
-        )
+        })
     }
-    
+
     open override var needsView: Bool {
         return super.needsView
     }

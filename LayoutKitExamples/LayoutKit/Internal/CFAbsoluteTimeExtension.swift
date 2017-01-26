@@ -10,6 +10,6 @@ import Foundation
 
 extension CFAbsoluteTime {
     var ms: String {
-       return String(format: "%4.1f ms", self * 1000)
+        return String(format: "%4.1f ms", self * 1000)
     }
 }

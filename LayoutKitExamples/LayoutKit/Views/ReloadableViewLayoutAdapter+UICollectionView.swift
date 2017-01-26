@@ -28,7 +28,7 @@ extension ReloadableViewLayoutAdapter: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDataSource
 
 extension ReloadableViewLayoutAdapter: UICollectionViewDataSource {
-    
+
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentArrangement[section].items.count
     }

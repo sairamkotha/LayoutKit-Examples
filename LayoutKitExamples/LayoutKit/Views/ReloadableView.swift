@@ -37,7 +37,7 @@ public protocol ReloadableView: class {
 
     /**
      Performs a set of updates in a batch.
-     
+
      The reloadable view must follow the same semantics for handling the index paths
      of concurrent inserts/updates/deletes as UICollectionView documents in `performBatchUpdates`.
      */

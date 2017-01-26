@@ -247,7 +247,7 @@ open class SizeLayout<V: View>: BaseLayout<V>, ConfigurableLayout {
     open func arrangement(within rect: CGRect, measurement: LayoutMeasurement) -> LayoutArrangement {
         let frame = alignment.position(size: measurement.size, in: rect)
         let sublayoutRect = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-        let sublayouts = measurement.sublayouts.map { (measurement) in
+        let sublayouts = measurement.sublayouts.map { measurement in
             return measurement.arrangement(within: sublayoutRect)
         }
         return LayoutArrangement(layout: self, frame: frame, sublayouts: sublayouts)

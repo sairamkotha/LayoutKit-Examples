@@ -29,11 +29,11 @@ public protocol ConfigurableLayout: Layout {
 
      Example:
 
-         class LabelLayout {
-             func configure(view label: UILabel) {
-                 label.text = "example"
-             }
-         }
+     class LabelLayout {
+     func configure(view label: UILabel) {
+     label.text = "example"
+     }
+     }
 
      MUST be run on the main thread.
      */

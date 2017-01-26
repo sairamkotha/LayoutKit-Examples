@@ -48,7 +48,7 @@ public struct Alignment {
 
     /// Alignment behavior along the vertical dimension.
     public enum Vertical {
-        
+
         /// The layout is aligned to the top edge.
         case top
 
@@ -124,7 +124,7 @@ public struct Alignment {
     public init(aligner: @escaping Aligner) {
         self.aligner = aligner
     }
-    
+
     public init(vertical: Vertical, horizontal: Horizontal) {
         self.aligner = { (size: CGSize, rect: CGRect) -> CGRect in
             let (x, width) = horizontal.align(length: size.width, availableLength: rect.width, offset: rect.origin.x)

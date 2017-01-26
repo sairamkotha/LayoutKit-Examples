@@ -10,16 +10,16 @@ import UIKit
 
 /**
  A view that stacks its subviews along a single axis.
- 
+
  It is similar to UIStackView except that it uses StackLayout instead of Auto Layout, which means layout is much faster.
- 
+
  Although StackView is faster than UIStackView, it still does layout on the main thread.
  If you want to get the full benefit of LayoutKit, use StackLayout directly.
- 
+
  Unlike UIStackView, if you position StackView with Auto Layout, you must call invalidateIntrinsicContentSize on that StackView
  whenever any of its subviews' intrinsic content sizes change (e.g. changing the text of a UILabel that is positioned by the StackView).
  Otherwise, Auto Layout won't recompute the layout of the StackView.
- 
+
  Subviews MUST implement sizeThatFits so StackView can allocate space correctly.
  If a subview uses Auto Layout, then the subview may implement sizeThatFits by calling systemLayoutSizeFittingSize.
  */
@@ -70,7 +70,7 @@ open class StackView: UIView {
 
     /**
      Adds a subview to the stack.
-     
+
      Subviews MUST implement sizeThatFits so StackView can allocate space correctly.
      If a subview uses Auto Layout, then the subview can implement sizeThatFits by calling systemLayoutSizeFittingSize.
      */

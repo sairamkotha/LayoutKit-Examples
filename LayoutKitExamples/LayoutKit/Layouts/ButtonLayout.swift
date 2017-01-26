@@ -17,7 +17,7 @@ import UIKit
 
  If future-proofing is a concern for your application, then you should not use ButtonLayout and instead implement your own
  custom layout that uses you own custom button view (e.g. by subclassing UIControl).
- 
+
  Similary, if you have your own custom button view, you will need to create your own custom layout for it.
  */
 open class ButtonLayout<Button: UIButton>: BaseLayout<Button>, ConfigurableLayout {
@@ -274,7 +274,7 @@ public enum ButtonLayoutType {
     case contactAdd
 
     public var buttonType: UIButtonType {
-        switch (self) {
+        switch self {
         case .custom:
             return .custom
         case .system:

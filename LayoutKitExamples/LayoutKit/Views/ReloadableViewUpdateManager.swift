@@ -141,7 +141,7 @@ class BatchUpdateManager: BaseReloadableViewUpdateManager, ReloadableViewUpdateM
             } else {
                 reloadableView.reloadDataSynchronously()
             }
-            
+
             completion?()
         }
     }

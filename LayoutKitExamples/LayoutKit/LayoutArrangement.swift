@@ -26,7 +26,7 @@ public struct LayoutArrangement {
      Creates the views for the layout and adds them as subviews to the provided view.
      Existing subviews of the provided view will be removed.
      If no view is provided, then a new one is created and returned.
-     
+
      MUST be run on the main thread.
 
      - parameter view: The layout's views will be added as subviews to this view, if provided.
@@ -51,13 +51,13 @@ public struct LayoutArrangement {
      ```
      let animation = nextLayout.arrangement().prepareAnimation(for: rootView, direction: .RightToLeft)
      View.animateWithDuration(5.0, animations: {
-         animation.apply()
+     animation.apply()
      })
      ```
-     
+
      Subviews are reparented for the new arrangement, if necessary, but frames are adjusted so locations don't change.
      No frames or configurations of the new arrangement are applied until `apply()` is called on the returned animation object.
-     
+
      MUST be run on the main thread.
      */
     public func prepareAnimation(for view: View, direction: UserInterfaceLayoutDirection = .leftToRight) -> Animation {
@@ -157,4 +157,3 @@ extension View {
         }
     }
 }
-

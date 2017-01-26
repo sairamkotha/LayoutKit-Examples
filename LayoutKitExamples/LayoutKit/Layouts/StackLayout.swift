@@ -10,9 +10,9 @@ import CoreGraphics
 
 /**
  A layout that stacks sublayouts along an axis.
- 
+
  Axis space is allocated to sublayouts according to the distribution policy.
- 
+
  If this not enough space along the axis for all sublayouts then layouts with the highest flexibility are removed
  until there is enough space to posistion the remaining layouts.
  */
@@ -29,7 +29,7 @@ open class StackLayout<V: View>: BaseLayout<V> {
 
     /// The distribution of space along the stack's axis.
     open let distribution: StackLayoutDistribution
-    
+
     /// The stacked layouts.
     open let sublayouts: [Layout]
 
@@ -41,7 +41,7 @@ open class StackLayout<V: View>: BaseLayout<V> {
                 viewReuseId: String? = nil,
                 sublayouts: [Layout],
                 config: ((V) -> Void)? = nil) {
-        
+
         self.axis = axis
         self.spacing = spacing
         self.distribution = distribution
@@ -261,7 +261,7 @@ extension StackLayout {
      If two sublayouts have the same flexibility, then sublayout with the higher index is considered more flexible.
      Inflexible layouts are sorted before all flexible layouts.
      */
-    private func layoutsFlexibilityAscending(compare :(left: (offset: Int, element: Layout), right: (offset: Int, element: Layout))) -> Bool {
+    private func layoutsFlexibilityAscending(compare: (left: (offset: Int, element: Layout), right: (offset: Int, element: Layout))) -> Bool {
         let leftFlex = compare.left.element.flexibility.flex(axis)
         let rightFlex = compare.right.element.flexibility.flex(axis)
         if leftFlex == rightFlex {

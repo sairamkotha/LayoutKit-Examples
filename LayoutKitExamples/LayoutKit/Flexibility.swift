@@ -6,13 +6,12 @@
 // software distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-
 /**
  The flexibility of a layout along both dimensions.
- 
+
  Flexibility is a hint to a layout's parent about how the parent should prioritize space allocation among its children
  when there is either insufficient or too much space.
- 
+
  A layout MAY use the flexibility of its sublayouts to determine how to allocate its available space between those sublayouts.
  A layout SHOULD NOT ever need to inspect its own flexiblity.
 
@@ -24,9 +23,9 @@
 public struct Flexibility {
     /**
      A measure of flexibility. Larger is more flexible.
-     
+
      nil means inflexible.
-     
+
      Flex is an Int32 so that its range doesn't depend on the architecture.
      */
     public typealias Flex = Int32?

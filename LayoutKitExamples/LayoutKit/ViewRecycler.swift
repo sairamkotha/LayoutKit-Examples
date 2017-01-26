@@ -10,7 +10,7 @@ import ObjectiveC
 
 /**
  Provides APIs to recycle views by id.
- 
+
  Initialize ViewRecycler with a root view whose subviews are eligible for recycling.
  Call `makeView(layoutId:)` to recycle or create a view of the desired type and id.
  Call `purgeViews()` to remove all unrecycled views from the view hierarchy.
@@ -22,7 +22,7 @@ class ViewRecycler {
 
     /// Retains all subviews of rootView for recycling.
     init(rootView: View?) {
-        rootView?.walkSubviews { (view) in
+        rootView?.walkSubviews { view in
             if let viewReuseId = view.viewReuseId {
                 self.viewsById[viewReuseId] = view
             } else {
@@ -80,7 +80,7 @@ extension View {
     }
 
     /// Identifies the layout that was used to create this view.
-    public internal(set) var viewReuseId: String? {
+    internal(set) public var viewReuseId: String? {
         get {
             return objc_getAssociatedObject(self, &viewReuseIdKey) as? String
         }

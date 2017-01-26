@@ -13,7 +13,7 @@ import Foundation
  A layout that insets another layout.
  */
 open class InsetLayout<V: View>: BaseLayout<V>, ConfigurableLayout {
-    
+
     open let insets: EdgeInsets
     open let sublayout: Layout
 

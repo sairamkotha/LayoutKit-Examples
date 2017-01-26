@@ -6,31 +6,26 @@
 // software distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-
 /// A wrapper around Flexibility that makes it easy to do math relative to an axis.
 public struct AxisFlexibility {
     public let axis: Axis
     public let flexibility: Flexibility
 
     public var axisFlex: Flexibility.Flex {
-        get {
-            switch axis {
-            case .horizontal:
-                return flexibility.horizontal
-            case .vertical:
-                return flexibility.vertical
-            }
+        switch axis {
+        case .horizontal:
+            return flexibility.horizontal
+        case .vertical:
+            return flexibility.vertical
         }
     }
 
     public var crossFlex: Flexibility.Flex {
-        get {
-            switch axis {
-            case .horizontal:
-                return flexibility.vertical
-            case .vertical:
-                return flexibility.horizontal
-            }
+        switch axis {
+        case .horizontal:
+            return flexibility.vertical
+        case .vertical:
+            return flexibility.horizontal
         }
     }
 

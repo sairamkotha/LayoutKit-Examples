@@ -19,7 +19,7 @@ open class ReloadableViewLayoutAdapter: NSObject, ReloadableViewUpdateManagerDel
 
     /// The current layout arrangement.
     /// Must be accessed from the main thread only.
-    open internal(set) var currentArrangement = [Section<[LayoutArrangement]>]()
+    internal(set) open var currentArrangement = [Section<[LayoutArrangement]>]()
 
     /// The queue that layouts are computed on.
     let backgroundLayoutQueue: OperationQueue = {
@@ -62,7 +62,7 @@ open class ReloadableViewLayoutAdapter: NSObject, ReloadableViewUpdateManagerDel
         height: CGFloat? = nil,
         synchronous: Bool = false,
         batchUpdates: BatchUpdates? = nil,
-        layoutProvider: @escaping (Void) -> T,
+        layoutProvider: @escaping () -> T,
         completion: (() -> Void)? = nil) where U.Iterator.Element == Layout, T.Iterator.Element == Section<U> {
 
         assert(Thread.isMainThread, "reload must be called on the main thread")
@@ -82,10 +82,10 @@ open class ReloadableViewLayoutAdapter: NSObject, ReloadableViewUpdateManagerDel
     }
 
     private func reloadSynchronously<T: Collection, U: Collection>(
-        layoutProvider: (Void) -> T,
+        layoutProvider: () -> T,
         layoutFunc: @escaping (Layout) -> LayoutArrangement,
         batchUpdates: BatchUpdates?,
-        completion: ((Void) -> Void)?) where U.Iterator.Element == Layout, T.Iterator.Element == Section<U> {
+        completion: (() -> Void)?) where U.Iterator.Element == Layout, T.Iterator.Element == Section<U> {
 
         let start = CFAbsoluteTimeGetCurrent()
         currentArrangement = layoutProvider().map { sectionLayout in
@@ -97,15 +97,15 @@ open class ReloadableViewLayoutAdapter: NSObject, ReloadableViewUpdateManagerDel
             reloadableView?.reloadDataSynchronously()
         }
         let end = CFAbsoluteTimeGetCurrent()
-        logger?("user: \((end-start).ms)")
+        logger?("user: \((end - start).ms)")
         completion?()
     }
 
     private func reloadAsynchronously<T: Collection, U: Collection>(
-        layoutProvider: @escaping (Void) -> T,
+        layoutProvider: @escaping () -> T,
         layoutFunc: @escaping (Layout) -> LayoutArrangement,
         batchUpdates: BatchUpdates?,
-        completion: ((Void) -> Void)?) where U.Iterator.Element == Layout, T.Iterator.Element == Section<U> {
+        completion: (() -> Void)?) where U.Iterator.Element == Layout, T.Iterator.Element == Section<U> {
 
         let start = CFAbsoluteTimeGetCurrent()
         let operation = BlockOperation()
@@ -147,7 +147,7 @@ open class ReloadableViewLayoutAdapter: NSObject, ReloadableViewUpdateManagerDel
             }
             updateManager.apply(finalArrangement: pendingArrangement, batchUpdates: batchUpdates, completion: { [weak self] in
                 let end = CFAbsoluteTimeGetCurrent()
-                self?.logger?("user: \((end-start).ms)")
+                self?.logger?("user: \((end - start).ms)")
                 completion?()
             })
         }

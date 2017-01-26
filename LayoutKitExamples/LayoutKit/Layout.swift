@@ -10,7 +10,7 @@ import CoreGraphics
 
 /**
  A protocol for types that layout view frames.
- 
+
  ### Basic layouts
 
  Many UIs can be expressed by composing the basic layouts that LayoutKit provides:
@@ -19,7 +19,7 @@ import CoreGraphics
  - `InsetLayout`
  - `SizeLayout`
  - `StackLayout`
- 
+
  If your UI can not be expressed by composing these basic layouts,
  then you can create a custom layout. Custom layouts are recommended but not required to conform
  to the `ConfigurableLayout` protocol due to the type safety and default implementation that it adds.
@@ -28,22 +28,22 @@ import CoreGraphics
 
  Layout is performed in two steps:
 
-   1. `measurement(within:)`
-   2. `arrangement(within:measurement:)`.
+ 1. `measurement(within:)`
+ 2. `arrangement(within:measurement:)`.
 
  `arrangement(origin:width:height:)` is a convenience method for doing both passes in one function call.
 
  ### Threading
 
  Layouts MUST be thread-safe.
-*/
+ */
 public protocol Layout {
 
     /**
      Measures the minimum size of the layout and its sublayouts.
 
      It MAY be run on a background thread.
-     
+
      - parameter maxSize: The maximum size available to the layout.
      - returns: The minimum size required by the layout and its sublayouts given a maximum size.
      The size of the layout MUST NOT exceed `maxSize`.
@@ -59,7 +59,7 @@ public protocol Layout {
      Space allocation SHOULD happen during the measure pass.
 
      MAY be run on a background thread.
-     
+
      - parameter rect: The rectangle that the layout must position itself in.
      - parameter measurement: A measurement which has size less than or equal to `rect.size` and greater than or equal to `measurement.maxSize`.
      - returns: A complete set of frames for the layout.
@@ -71,7 +71,7 @@ public protocol Layout {
      Layouts that just position their sublayouts can return false here.
      */
     var needsView: Bool { get }
-    
+
     /**
      Returns a new UIView for the layout.
      It is not called on a layout if the layout is using a recycled view.
@@ -100,7 +100,7 @@ public protocol Layout {
 
     /**
      An identifier for the view that is produced by this layout.
-     
+
      If this layout is applied to an existing view hierarchy, and if there is a view with an identical viewReuseId,
      then that view will be reused for the new layout. If there is more than one view with the same viewReuseId, then an arbitrary one will be reused.
      */
@@ -114,21 +114,21 @@ public extension Layout {
 
      - parameter origin: The returned layout will be positioned at origin. Defaults to CGPointZero.
      - parameter width: The exact width that the layout should consume.
-         If nil, the layout is given exactly the size that it requested during the measure pass.
+     If nil, the layout is given exactly the size that it requested during the measure pass.
      - parameter height: The exact height that the layout should consume.
-         If nil, the layout is given exactly the size that it requested during the measure pass.
+     If nil, the layout is given exactly the size that it requested during the measure pass.
      */
     final func arrangement(origin: CGPoint = .zero, width: CGFloat? = nil, height: CGFloat? = nil) -> LayoutArrangement {
-//        let start = CFAbsoluteTimeGetCurrent()
+        //        let start = CFAbsoluteTimeGetCurrent()
         let maxSize = CGSize(width: width ?? CGFloat.greatestFiniteMagnitude, height: height ?? CGFloat.greatestFiniteMagnitude)
         let measurement = self.measurement(within: maxSize)
-//        let measureEnd = CFAbsoluteTimeGetCurrent()
+        //        let measureEnd = CFAbsoluteTimeGetCurrent()
         var rect = CGRect(origin: origin, size: measurement.size)
         rect.size.width = width ?? rect.size.width
         rect.size.height = height ?? rect.size.height
         let arrangement = self.arrangement(within: rect, measurement: measurement)
-//        let layoutEnd = CFAbsoluteTimeGetCurrent()
-//        NSLog("layout: \((layoutEnd-start).ms) (measure: \((measureEnd-start).ms) + layout: \((layoutEnd-measureEnd).ms))")
+        //        let layoutEnd = CFAbsoluteTimeGetCurrent()
+        //        NSLog("layout: \((layoutEnd-start).ms) (measure: \((measureEnd-start).ms) + layout: \((layoutEnd-measureEnd).ms))")
         return arrangement
     }
 }

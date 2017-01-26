@@ -24,7 +24,7 @@ open class LabelLayout<Label: UILabel>: BaseLayout<Label>, ConfigurableLayout {
                 flexibility: Flexibility = defaultFlexibility,
                 viewReuseId: String? = nil,
                 config: ((Label) -> Void)? = nil) {
-        
+
         self.text = text
         self.numberOfLines = numberOfLines
         self.font = font
@@ -76,7 +76,7 @@ open class LabelLayout<Label: UILabel>: BaseLayout<Label>, ConfigurableLayout {
 
     private func textSize(within maxSize: CGSize) -> CGSize {
         let options: NSStringDrawingOptions = [
-            .usesLineFragmentOrigin
+            .usesLineFragmentOrigin,
         ]
 
         var size: CGSize
@@ -95,7 +95,7 @@ open class LabelLayout<Label: UILabel>: BaseLayout<Label>, ConfigurableLayout {
             let attributedTextWithFont = NSMutableAttributedString(string: attributedText.string, attributes: fontAttribute)
             let fullRange = NSMakeRange(0, (attributedText.string as NSString).length)
             attributedTextWithFont.beginEditing()
-            attributedText.enumerateAttributes(in: fullRange, options: .longestEffectiveRangeNotRequired, using: { (attributes, range, _) in
+            attributedText.enumerateAttributes(in: fullRange, options: .longestEffectiveRangeNotRequired, using: { attributes, range, _ in
                 attributedTextWithFont.addAttributes(attributes, range: range)
             })
             attributedTextWithFont.endEditing()

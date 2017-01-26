@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// A set of updates to apply to a `ReloadableView`.
 public struct BatchUpdates {
     public var insertItems = [IndexPath]()
@@ -21,7 +20,7 @@ public struct BatchUpdates {
     public var reloadSections = IndexSet()
     public var moveSections = [SectionMove]()
 
-    public init() { }
+    public init() {}
 }
 
 /// Instruction to move an item from one index path to another.
