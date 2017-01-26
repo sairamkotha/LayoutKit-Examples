@@ -6,7 +6,7 @@ Linkedin Layoutkit - https://github.com/linkedin/LayoutKit
 Layoutkit is fast as manual code (using frames layout) and maintainable code with linkedin layoutkit.([significantly faster than Auto Layout](http://layoutkit.org/benchmarks).)
 
 
-## Installation
+## LayoutKit Installation 
 
 LayoutKit can be installed with [CocoaPods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage).
 
