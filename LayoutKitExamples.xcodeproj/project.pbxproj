@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A252C9621E38F4280046838A /* TopDividerStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C9611E38F4280046838A /* TopDividerStackLayout.swift */; };
+		A252C9641E38FC090046838A /* PopOverCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C9631E38FC090046838A /* PopOverCustomLayout.swift */; };
+		A252C9711E38FE1F0046838A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C96D1E38FE1F0046838A /* ViewController.swift */; };
+		A252C9721E38FE1F0046838A /* PopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C96F1E38FE1F0046838A /* PopOverView.swift */; };
 		A27966091E37B351000AD16E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27966081E37B351000AD16E /* AppDelegate.swift */; };
-		A279660B1E37B351000AD16E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279660A1E37B351000AD16E /* ViewController.swift */; };
 		A279660E1E37B351000AD16E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279660C1E37B351000AD16E /* Main.storyboard */; };
 		A27966101E37B351000AD16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A279660F1E37B351000AD16E /* Assets.xcassets */; };
 		A27966131E37B351000AD16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27966111E37B351000AD16E /* LaunchScreen.storyboard */; };
@@ -68,9 +70,11 @@
 
 /* Begin PBXFileReference section */
 		A252C9611E38F4280046838A /* TopDividerStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopDividerStackLayout.swift; sourceTree = "<group>"; };
+		A252C9631E38FC090046838A /* PopOverCustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverCustomLayout.swift; sourceTree = "<group>"; };
+		A252C96D1E38FE1F0046838A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A252C96F1E38FE1F0046838A /* PopOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverView.swift; sourceTree = "<group>"; };
 		A27966051E37B351000AD16E /* LayoutKitExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutKitExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27966081E37B351000AD16E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A279660A1E37B351000AD16E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A279660D1E37B351000AD16E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A279660F1E37B351000AD16E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A27966121E37B351000AD16E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,8 +148,32 @@
 			isa = PBXGroup;
 			children = (
 				A252C9611E38F4280046838A /* TopDividerStackLayout.swift */,
+				A252C9631E38FC090046838A /* PopOverCustomLayout.swift */,
 			);
 			path = ExampleLayouts;
+			sourceTree = "<group>";
+		};
+		A252C96A1E38FE1F0046838A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A252C96C1E38FE1F0046838A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A252C96D1E38FE1F0046838A /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A252C96E1E38FE1F0046838A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A252C96F1E38FE1F0046838A /* PopOverView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A27965FC1E37B351000AD16E = {
@@ -172,9 +200,11 @@
 			isa = PBXGroup;
 			children = (
 				A27966081E37B351000AD16E /* AppDelegate.swift */,
-				A279660A1E37B351000AD16E /* ViewController.swift */,
-				A252C9601E38F4070046838A /* ExampleLayouts */,
 				A27966801E37B3B2000AD16E /* LayoutKit */,
+				A252C96C1E38FE1F0046838A /* ViewController */,
+				A252C96E1E38FE1F0046838A /* Views */,
+				A252C9601E38F4070046838A /* ExampleLayouts */,
+				A252C96A1E38FE1F0046838A /* Resources */,
 				A279660C1E37B351000AD16E /* Main.storyboard */,
 				A279660F1E37B351000AD16E /* Assets.xcassets */,
 				A27966111E37B351000AD16E /* LaunchScreen.storyboard */,
@@ -412,7 +442,6 @@
 				A252C9621E38F4280046838A /* TopDividerStackLayout.swift in Sources */,
 				A27966C31E37B3B2000AD16E /* ReloadableViewUpdateManager.swift in Sources */,
 				A27966B41E37B3B2000AD16E /* SizeLayout.swift in Sources */,
-				A279660B1E37B351000AD16E /* ViewController.swift in Sources */,
 				A27966BD1E37B3B2000AD16E /* LayoutAdapterCollectionView.swift in Sources */,
 				A27966C21E37B3B2000AD16E /* ReloadableViewLayoutAdapter.swift in Sources */,
 				A27966AB1E37B3B2000AD16E /* CGFloatExtension.swift in Sources */,
@@ -429,6 +458,7 @@
 				A27966A51E37B3B2000AD16E /* Alignment.swift in Sources */,
 				A27966A61E37B3B2000AD16E /* Animation.swift in Sources */,
 				A27966B91E37B3B2000AD16E /* Text.swift in Sources */,
+				A252C9641E38FC090046838A /* PopOverCustomLayout.swift in Sources */,
 				A27966AA1E37B3B2000AD16E /* CFAbsoluteTimeExtension.swift in Sources */,
 				A27966BF1E37B3B2000AD16E /* ReloadableView.swift in Sources */,
 				A27966BE1E37B3B2000AD16E /* LayoutAdapterTableView.swift in Sources */,
@@ -439,10 +469,12 @@
 				A27966B61E37B3B2000AD16E /* AxisFlexibility.swift in Sources */,
 				A27966C01E37B3B2000AD16E /* ReloadableViewLayoutAdapter+UICollectionView.swift in Sources */,
 				A27966B31E37B3B2000AD16E /* LabelLayout.swift in Sources */,
+				A252C9711E38FE1F0046838A /* ViewController.swift in Sources */,
 				A27966B11E37B3B2000AD16E /* ButtonLayout.swift in Sources */,
 				A27966B21E37B3B2000AD16E /* InsetLayout.swift in Sources */,
 				A27966A91E37B3B2000AD16E /* Flexibility.swift in Sources */,
 				A27966091E37B351000AD16E /* AppDelegate.swift in Sources */,
+				A252C9721E38FE1F0046838A /* PopOverView.swift in Sources */,
 				A27966C11E37B3B2000AD16E /* ReloadableViewLayoutAdapter+UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
