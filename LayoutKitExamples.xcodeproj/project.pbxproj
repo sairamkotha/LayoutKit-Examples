@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22D994C1E39B9A800555B86 /* EarthStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22D994B1E39B9A800555B86 /* EarthStackLayout.swift */; };
 		A252C9621E38F4280046838A /* TopDividerStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C9611E38F4280046838A /* TopDividerStackLayout.swift */; };
 		A252C9641E38FC090046838A /* PopOverCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C9631E38FC090046838A /* PopOverCustomLayout.swift */; };
 		A252C9711E38FE1F0046838A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252C96D1E38FE1F0046838A /* ViewController.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A22D994B1E39B9A800555B86 /* EarthStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthStackLayout.swift; sourceTree = "<group>"; };
 		A252C9611E38F4280046838A /* TopDividerStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopDividerStackLayout.swift; sourceTree = "<group>"; };
 		A252C9631E38FC090046838A /* PopOverCustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverCustomLayout.swift; sourceTree = "<group>"; };
 		A252C96D1E38FE1F0046838A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				A252C9611E38F4280046838A /* TopDividerStackLayout.swift */,
 				A252C9631E38FC090046838A /* PopOverCustomLayout.swift */,
+				A22D994B1E39B9A800555B86 /* EarthStackLayout.swift */,
 			);
 			path = ExampleLayouts;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				A27966A51E37B3B2000AD16E /* Alignment.swift in Sources */,
 				A27966A61E37B3B2000AD16E /* Animation.swift in Sources */,
 				A27966B91E37B3B2000AD16E /* Text.swift in Sources */,
+				A22D994C1E39B9A800555B86 /* EarthStackLayout.swift in Sources */,
 				A252C9641E38FC090046838A /* PopOverCustomLayout.swift in Sources */,
 				A27966AA1E37B3B2000AD16E /* CFAbsoluteTimeExtension.swift in Sources */,
 				A27966BF1E37B3B2000AD16E /* ReloadableView.swift in Sources */,
